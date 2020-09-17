@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Tasks list</title>
+        <link rel="stylesheet" href="/src/css/main.css" />
+        <link rel="stylesheet" href="/src/css/modal.css" />
+    </head>
+    <body>
+        <div class="wrap flex">
+            <div>
+                <div class="main-title">Tasks list</div> 
+                <form class="form">
+                        <div class="form__add-task flex">
+                            <div>
+                                <div class="form__task-title flex">
+                                    <label for="title">title</label>
+                                    <input 
+                                    type="text" 
+                                    id="form__title" 
+                                    pattern="[a-zA-Z0-9\s]+" 
+                                    title="Names and Values can contain only alpha-numeric characters"
+                                    required
+                                    >
+                                </div>
+                                <div class="form__task-description flex">
+                                    <label for="description">description</label>
+                                    <input 
+                                    type="text" 
+                                    id="form__description" 
+                                    pattern="[a-zA-Z0-9\s]+"
+                                    title="Names and Values can contain only alpha-numeric characters" 
+                                    required
+                                    >
+                                </div>
+                            </div>    
+                            <input type="submit" id="form__add-btn" value="+">
+                        </div>
+                </form>
+                <div id="modal" class="modal">
+                    <div id="modal__close">+</div>
+                    <div class="modal__data">Data in modal window</div>
+                </div>
+                <div class="tasks flex">
+                    <ul id="tasks__list"></ul>
+                    <nav class="tasks__nav flex">
+                        <button class="nav__sort-by-name">Sort by Name</button>
+                        <button class="nav__sort-by-value">Sort by Value</button>
+                        <button class="nav__xml">Show XML</button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="/src/js/formView.js"></script>
+    </body>
+</html>
+ 
