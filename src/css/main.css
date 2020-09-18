@@ -120,8 +120,9 @@ li span {
     content: "";
     width: 22px;
     height: 22px;
-    background: url(/public/img/waste.png) no-repeat center;
-    background-size: 70%;
+    background: url(/public/img/waste.svg) no-repeat;
+    background-size: 65%;
+    background-position: 4px;
     display: block;
     position: absolute;
     border: 1px solid gray;
@@ -155,7 +156,9 @@ input[type=checkbox]:checked ~ label span {
 }
 input[type=checkbox]:checked ~ label::before {
     border: 1px solid gray;
-    background: url(/public/img/checked.png) no-repeat ;
+    background: url(/public/img/checked.svg) no-repeat;
+    background-size: 80%;
+    background-position: 1px;
     opacity: 0.6;
 }
 .tasks__nav {

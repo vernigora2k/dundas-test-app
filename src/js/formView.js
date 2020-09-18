@@ -5,23 +5,16 @@ import {  sortByName, sortByValue, getXML, showModal } from './controller.js';
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     // remove extra spaces
-    let titleTrimmed = taskTitle.value.replace(/ +/g, ' ').trim()
-    let descriptionTrimmed = taskDescription.value.replace(/ +/g, ' ').trim()
     const task = {
-        title: titleTrimmed,
-        description: descriptionTrimmed
+        title: taskTitle.value.replace(/ +/g, ' ').trim(),
+        description: taskDescription.value.replace(/ +/g, ' ').trim()
     }
     const newTask = new Task(task)
-    newTask.create()
 })
 
-sortByNameBtn.addEventListener('click', () => {
-    sortByName()
-})
+sortByNameBtn.addEventListener('click', sortByName)
 
-sortByValueBtn.addEventListener('click', () => {
-    sortByValue()
-})
+sortByValueBtn.addEventListener('click', sortByValue)
 
 showXMLBtn.addEventListener('click', () => {  
     showModal(getXML())
@@ -33,12 +26,10 @@ modalClose.addEventListener('click', () => {
 
 export default class Task {
     constructor(task) {
-        this.title = task.title
-        this.description = task.description
-    }
-    create() {
         let tasksList = document.querySelector('#tasks__list')
         let newTask = document.createElement('li')
+        this.title = task.title
+        this.description = task.description
         newTask.innerHTML = `<input id=${this.title} type='checkbox'/>` +
             `<label class="task" for=${this.title}>` +
             `<h3>${this.title}</h3>` +
