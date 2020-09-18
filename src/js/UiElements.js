@@ -9,3 +9,9 @@ export const showXMLBtn = document.querySelector('.nav__xml');
 export const modal = document.querySelector('#modal');
 export const modalClose = document.querySelector('#modal__close');
 export const modalData = document.querySelector('.modal__data');
+export function getTasksList() {
+    return document.getElementById("tasks__list")
+}
+export function getTasks() {
+    return document.querySelectorAll("#tasks__list li")
+}

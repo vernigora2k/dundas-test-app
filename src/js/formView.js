@@ -1,6 +1,6 @@
 
 import { taskTitle, taskDescription, form, sortByNameBtn, sortByValueBtn, showXMLBtn, modalClose, modal } from './UiElements.js';
-import {  sortByName, sortByValue, getXML, showModal } from './controller.js';
+import {  sortBy, getXML, showModal } from './controller.js';
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -12,9 +12,13 @@ form.addEventListener('submit', (event) => {
     const newTask = new Task(task)
 })
 
-sortByNameBtn.addEventListener('click', sortByName)
+sortByNameBtn.addEventListener('click', () => {
+    sortBy(0)
+})
 
-sortByValueBtn.addEventListener('click', sortByValue)
+sortByValueBtn.addEventListener('click', () => {
+    sortBy(1)
+})
 
 showXMLBtn.addEventListener('click', () => {  
     showModal(getXML())
